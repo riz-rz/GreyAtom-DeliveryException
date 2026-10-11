@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greyAtom-Dashboard</title>
+    <link rel="stylesheet" href="gray-atom.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>GreyAtom Logistics</h1> 
+            <p>Exception Management</p>
+        </div>
+        <nav>
+            <ul class="navig">
+                <li><a href="#">Home</a></li>
+                <li><a href="#ex-table">Exceptions</a></li>
+                <li><a href="#report">Report</a></li>
+            </ul>
+        </nav>
+        <!-- <div class="menu-icon">
+            <img src="menu-2-svgrepo-com.svg" alt="">
+        </div> -->
+    </header>
+    <section class="section1">
+        <div class="sec1-child">
+            <p> Total Exceptions:<span id="total-count">0</span></p>
+        </div>
+        <div class="sec1-child">
+            <p>Open Exceptions:<span id="open-count">0</span></p>
+        </div>
+        <div class="sec1-child">
+            <p>Resolved Exceptions:<span id="resolved-count">0</span></p>
+        </div>
+    </section>
+    <section class="report" id="report">
+        <button class="report-butn" id="report-butn" > + Report an Exception</button>
+
+        <form action="" class="report-form" id="report-form">
+            <div class="form-header">
+                <h1>Report an Exception :-</h1> 
+                <div class="close-butn"><img src="close-butn.svg" alt=""></div>
+            </div>
+            <br>
+            <label for="">Delivery ID: *</label>
+            <input type="text" id="delivery-id" placeholder="Enter Delivery ID" required> <br>
+            <label for="">Customer Name: *</label>
+            <input type="text" id="cust-name" placeholder="Enter Customer Name" required> <br>
+            <div class="dropdowns">
+                <select name="Issue" id="issues" required>
+                    <option value="" selected disabled> Issue Type </option>
+                    <option value="address not found">Address not found</option>
+                    <option value="customer unavailable">Customer not available</option>
+                    <option value="payment issues">Payment Issues</option>
+                    <option value="package damaged">Package Damaged</option>
+                </select>
+                <select name="Priority" id="priority" required>
+                    <option value="" selected disabled> Priority </option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div> <br>
+            <textarea name="" id="details" placeholder="Explain the issue in detail here please" rows="7"></textarea><br>
+            <button id="form-submit">Save Exception</button>
+        </form>
+    </section>
+    <section class="ex-table" id="ex-table">
+        <h1>All Exceptions</h1>
+        <div class="filter">
+            <div class="issue-filter-parent">
+                <label for="issues-filter">Type of issues:</label>
+                <select name="Issue" id="issues-filter" >
+                    <option value="all" selected > All </option>
+                    <option value="address not found">Address not found</option>
+                    <option value="customer unavailable">Customer not available</option>
+                    <option value="payment issues">Payment Issues</option>
+                    <option value="package damaged">Package Damaged</option>
+                </select>
+            </div>
+            <div class="priority-filter-parent">
+                <label for="priority-filter">Priority Type:</label>
+                 <select name="Priority" id="priority-filter" >
+                    <option value="all" selected > All </option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+        </div>
+        <div class="table-parent">
+            <table class="table">
+                <!-- <tr>
+                   <td>
+                    <div class="top">
+                        <div>
+                            <p>DELIVERY ID</p>
+                            <p>Customer name</p>
+                        </div>
+                        <span>open</span>
+                    </div>
+                    <p>Type of issue -  <span>priority</span></p>
+                    <div class="actions">
+                        <p>details</p>
+                        <div class="buttons">
+                            <button class="resolve-butn"><span>resolve</span></button>
+                            <button><img src="delete-svgrepo-com.svg" alt=" delete"></button>
+                        </div>
+                    </div>
+                   </td>
+                </tr>
+                
+                 -->
+                
+            </table>
+        </div>
+    </section>
+
+
+
+
+    <script src="gray-atom.js">
+
+    </script>
+</body>
+</html>
